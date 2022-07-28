@@ -66,7 +66,7 @@ export const Header: React.FC = () => {
             <ArrowBottom />
           </a>
         </Link> */}
-        <div className='styles.loginButton' onClick={openAuthDialog}>
+        <div className={styles.loginButton} onClick={openAuthDialog}>
           <UserIcon />
           Войти
         </div>
