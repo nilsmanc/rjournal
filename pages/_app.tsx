@@ -9,6 +9,10 @@ import { theme } from '../theme'
 
 import '../styles/globals.scss'
 import 'macro-css'
+import { setUserData } from '../redux/slices/user'
+import { UserApi } from '../utils/api/user'
+import { parseCookies } from 'nookies'
+import { Api } from '../utils/api'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -32,4 +36,16 @@ function App({ Component, pageProps }: AppProps) {
   )
 }
 
+App.getInitialProps = wrapper.getInitialAppProps((store) => async ({ ctx, Component }) => {
+  try {
+    const { authToken } = parseCookies(ctx)
+    const userData = await Api(ctx).user.getMe()
+    store.dispatch(setUserData(userData))
+  } catch (err) {
+    console.log(err)
+  }
+  return {
+    pageProps: Component.getInitialProps ? await Component.getInitialProps({ ...ctx, store }) : {},
+  }
+})
 export default wrapper.withRedux(App)
