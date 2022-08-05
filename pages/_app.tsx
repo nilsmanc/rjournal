@@ -38,11 +38,15 @@ function App({ Component, pageProps }: AppProps) {
 
 App.getInitialProps = wrapper.getInitialAppProps((store) => async ({ ctx, Component }) => {
   try {
-    const { authToken } = parseCookies(ctx)
     const userData = await Api(ctx).user.getMe()
     store.dispatch(setUserData(userData))
   } catch (err) {
-    console.log(err)
+    if (ctx.asPath === '/write') {
+      ctx.res.writeHead(302, {
+        Location: '/403',
+      })
+      ctx.res.end()
+    }
   }
   return {
     pageProps: Component.getInitialProps ? await Component.getInitialProps({ ...ctx, store }) : {},

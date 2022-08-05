@@ -4,6 +4,7 @@ import { LeftMenu } from '../components/LeftMenu'
 import { SideComments } from '../components/SideComments'
 
 interface MainLayoutProps {
+  children: any
   hideComments?: boolean
   hideMenu?: boolean
   contentFullWidth?: boolean

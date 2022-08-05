@@ -1,9 +1,5 @@
 import { CreateUserDto, LoginDto, ResponseUser } from './types'
-import axios, { AxiosInstance } from 'axios'
-
-const instance = axios.create({
-  baseURL: 'http://localhost:3000/',
-})
+import { AxiosInstance } from 'axios'
 
 export const UserApi = (instance: AxiosInstance) => ({
   async register(dto: CreateUserDto) {
