@@ -29,3 +29,12 @@ export type PostItem = {
   createdAt: string
   updatedAt: string
 }
+
+export type CommentItem = {
+  id: number
+  text: string
+  post: PostItem
+  user: ResponseUser
+  createdAt: string
+  updatedAt: string
+}
