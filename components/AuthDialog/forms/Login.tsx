@@ -40,8 +40,6 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onOpenRegister }) => {
     }
   }
 
-  console.log(form.formState.errors)
-
   return (
     <div>
       <FormProvider {...form}>

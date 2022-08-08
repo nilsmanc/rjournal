@@ -5,11 +5,11 @@ import { Button } from '@material-ui/core'
 import { useForm, FormProvider } from 'react-hook-form'
 import { RegisterFormShema } from '../../../utils/validations'
 import { FormField } from '../../FormField'
-import { UserApi } from '../../../utils/api/user'
 import { CreateUserDto } from '../../../utils/api/types'
 import { Alert } from '@material-ui/lab'
 import { setUserData } from '../../../redux/slices/user'
 import { useAppDispatch } from '../../../redux/hooks'
+import { Api } from '../../../utils/api'
 
 interface RegisterFormProps {
   onOpenRegister: () => void
@@ -25,9 +25,8 @@ export const RegisterForm: React.FC<RegisterFormProps> = ({ onOpenRegister, onOp
   })
   const onSubmit = async (dto: CreateUserDto) => {
     try {
-      const data = await UserApi.register(dto)
-      console.log(data)
-      setCookie(null, 'authToken', data.token, {
+      const data = await Api().user.register(dto)
+      setCookie(null, 'rtoken', data.token, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       })

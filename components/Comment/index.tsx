@@ -55,7 +55,6 @@ export const Comment: React.FC<CommentPostProps> = ({
         <span>{createdAt}</span>
       </div>
       <Typography className={styles.text}>{text}</Typography>
-
       {user.id === currentUserId && (
         <>
           <span className={styles.replyBtn}>Ответить</span>

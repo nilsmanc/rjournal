@@ -4,12 +4,12 @@ import styles from './AddCommentForm.module.scss'
 import { Api } from '../../utils/api'
 import { CommentItem } from '../../utils/api/types'
 
-interface AddCommentForm {
+interface AddCommentFormProps {
   postId: number
   onSuccessAdd: (obj: CommentItem) => void
 }
 
-export const AddCommentForm: React.FC<AddCommentForm> = ({ postId, onSuccessAdd }) => {
+export const AddCommentForm: React.FC<AddCommentFormProps> = ({ postId, onSuccessAdd }) => {
   const [clicked, setClicked] = React.useState(false)
   const [isLoading, setLoading] = React.useState(false)
   const [text, setText] = React.useState('')

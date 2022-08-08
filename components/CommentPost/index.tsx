@@ -14,7 +14,7 @@ interface CommentPostProps {
   }
 }
 
-export const CommentPost: React.FC<CommentPostProps> = ({ user, post, text }) => {
+export const CommentPost: React.FC<CommentPostProps> = ({ post, text }) => {
   const [anchorEl, setAnchorEl] = React.useState(null)
 
   const handleClick = (event) => {

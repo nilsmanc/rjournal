@@ -47,6 +47,11 @@ export const Header: React.FC = () => {
     }
   }
 
+  const onLinkClick = async (e) => {
+    setSearchValue('')
+    setPosts([])
+  }
+
   return (
     <Paper classes={{ root: styles.root }} elevation={0}>
       <div className='d-flex align-center'>
@@ -68,7 +73,9 @@ export const Header: React.FC = () => {
                 {posts.map((obj) => (
                   <Link key={obj.id} href={`/news/${obj.id}`}>
                     <a>
-                      <ListItem button>{obj.title}</ListItem>
+                      <ListItem button onClick={onLinkClick}>
+                        {obj.title}
+                      </ListItem>
                     </a>
                   </Link>
                 ))}
