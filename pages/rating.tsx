@@ -51,7 +51,6 @@ const Rating: NextPage<RatingPageProps> = ({ users }) => {
             {users.map((obj) => (
               <TableRow key={obj.id}>
                 <TableCell component='th' scope='row'>
-                  <span className='mr-15'>{obj.id}</span>
                   {obj.fullName}
                 </TableCell>
                 <TableCell align='right'>{obj.commentsCount * 2}</TableCell>
