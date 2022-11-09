@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+
 import { Post } from '../components/Post'
 import { MainLayout } from '../layouts/MainLayout'
 import { Api } from '../utils/api'

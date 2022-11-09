@@ -1,5 +1,6 @@
 import React from 'react'
 import { GetServerSideProps, NextPage } from 'next'
+
 import { MainLayout } from '../../layouts/MainLayout'
 import { WriteForm } from '../../components/WriteForm'
 import { Api } from '../../utils/api'
@@ -40,6 +41,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     }
   } catch (err) {
     console.log('Write page', err)
+
     return {
       props: {},
       redirect: {

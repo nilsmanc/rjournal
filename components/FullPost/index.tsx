@@ -1,11 +1,11 @@
-import { Button, Paper, Typography } from '@material-ui/core'
 import React from 'react'
+import { OutputData } from '@editorjs/editorjs'
 import { PostActions } from '../PostActions'
-import MessageIcon from '@material-ui/icons/TextsmsOutlined'
-import UserAddIcon from '@material-ui/icons/PersonAddOutlined'
 
 import styles from './FullPost.module.scss'
-import { OutputData } from '@editorjs/editorjs'
+import { Button, Paper, Typography } from '@material-ui/core'
+import MessageIcon from '@material-ui/icons/TextsmsOutlined'
+import UserAddIcon from '@material-ui/icons/PersonAddOutlined'
 
 interface FullPostProps {
   title: string

@@ -1,7 +1,9 @@
-import { Avatar } from '@material-ui/core'
 import Link from 'next/link'
+
 import { PostItem, ResponseUser } from '../../utils/api/types'
+
 import styles from './SideComments.module.scss'
+import { Avatar } from '@material-ui/core'
 
 interface CommentItemProps {
   user: ResponseUser

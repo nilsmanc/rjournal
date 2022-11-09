@@ -1,11 +1,12 @@
 import React from 'react'
-import { Dialog, DialogContent, DialogContentText, Typography } from '@material-ui/core'
-import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
-import styles from './AuthDialog.module.scss'
 import { MainForm } from './forms/Main'
 import { LoginForm } from './forms/Login'
 import { RegisterForm } from './forms/Register'
+
+import styles from './AuthDialog.module.scss'
+import { Dialog, DialogContent, DialogContentText, Typography } from '@material-ui/core'
+import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 
 interface AuthDialogProps {
   onClose: () => void

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Api } from '../utils/api'
 import { CommentItem } from '../utils/api/types'
 
@@ -19,5 +20,6 @@ export const useComments = (postId?: number): UseCommentsProps => {
       }
     })()
   }, [])
+
   return { comments, setComments }
 }

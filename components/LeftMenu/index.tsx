@@ -1,5 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+
+import styles from './LeftMenu.module.scss'
 import { Button } from '@material-ui/core'
 import {
   WhatshotOutlined as FireIcon,
@@ -7,9 +10,6 @@ import {
   TrendingUpOutlined as TrendingIcon,
   FormatListBulletedOutlined as ListIcon,
 } from '@material-ui/icons'
-
-import styles from './LeftMenu.module.scss'
-import { useRouter } from 'next/router'
 
 const menu = [
   { text: 'Лента', icon: <FireIcon />, path: '/' },

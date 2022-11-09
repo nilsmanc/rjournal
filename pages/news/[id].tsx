@@ -1,8 +1,9 @@
+import React from 'react'
+import { GetServerSideProps, NextPage } from 'next'
+
 import { MainLayout } from '../../layouts/MainLayout'
 import { FullPost } from '../../components/FullPost'
-import React from 'react'
 import { PostComments } from '../../components/PostComments'
-import { GetServerSideProps, NextPage } from 'next'
 import { PostItem } from '../../utils/api/types'
 import { Api } from '../../utils/api'
 
@@ -31,6 +32,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     }
   } catch (err) {
     console.log('Full post page', err)
+
     return {
       props: {},
       redirect: {

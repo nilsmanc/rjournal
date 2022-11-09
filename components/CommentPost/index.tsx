@@ -1,8 +1,8 @@
 import React from 'react'
-import { IconButton, Menu, MenuItem, Paper, Typography } from '@material-ui/core'
-import MoreVertIcon from '@material-ui/icons/MoreVert'
 
 import styles from './CommentPost.module.scss'
+import { IconButton, Menu, MenuItem, Paper, Typography } from '@material-ui/core'
+import MoreVertIcon from '@material-ui/icons/MoreVert'
 
 interface CommentPostProps {
   user: {
@@ -34,7 +34,6 @@ export const CommentPost: React.FC<CommentPostProps> = ({ post, text }) => {
         </IconButton>
       </Typography>
       <Typography className='mt-10 mb-15'>{text}</Typography>
-
       <Menu
         id='simple-menu'
         anchorEl={anchorEl}

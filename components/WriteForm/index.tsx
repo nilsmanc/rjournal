@@ -1,10 +1,12 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
-import { Button, Input } from '@material-ui/core'
-import styles from './WriteForm.module.scss'
+import { useRouter } from 'next/router'
+
 import { Api } from '../../utils/api'
 import { PostItem } from '../../utils/api/types'
-import { useRouter } from 'next/router'
+
+import styles from './WriteForm.module.scss'
+import { Button, Input } from '@material-ui/core'
 
 const Editor = dynamic(() => import('../Editor').then((m) => m.Editor), { ssr: false })
 

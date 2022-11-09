@@ -1,22 +1,22 @@
 import React from 'react'
 import Link from 'next/link'
+
+import { AuthDialog } from '../AuthDialog'
+import { useAppSelector } from '../../redux/hooks'
+import { selectUserData } from '../../redux/slices/user'
+import { PostItem } from '../../utils/api/types'
+import { Api } from '../../utils/api'
+
+import styles from './Header.module.scss'
 import { Paper, Button, IconButton, Avatar, ListItem, List } from '@material-ui/core'
 import {
   SearchOutlined as SearchIcon,
-  CreateOutlined as PenIcon,
   SmsOutlined as MessageIcon,
   Menu as MenuIcon,
   ExpandMoreOutlined as ArrowBottom,
   NotificationsNoneOutlined as NotificationIcon,
   AccountCircleOutlined as UserIcon,
 } from '@material-ui/icons'
-
-import styles from './Header.module.scss'
-import { AuthDialog } from '../AuthDialog'
-import { useAppSelector } from '../../redux/hooks'
-import { selectUserData } from '../../redux/slices/user'
-import { PostItem } from '../../utils/api/types'
-import { Api } from '../../utils/api'
 
 export const Header: React.FC = () => {
   const userData = useAppSelector(selectUserData)
@@ -27,6 +27,7 @@ export const Header: React.FC = () => {
   const openAuthDialog = () => {
     setAuthVisible(true)
   }
+
   const closeAuthDialog = () => {
     setAuthVisible(false)
   }
@@ -63,7 +64,6 @@ export const Header: React.FC = () => {
             <img height={35} className='mr-20' src='/static/img/logo.svg' alt='Logo' />
           </a>
         </Link>
-
         <div className={styles.searchBlock}>
           <SearchIcon />
           <input value={searchValue} onChange={handleChangeInput} placeholder='Поиск' />
@@ -83,7 +83,6 @@ export const Header: React.FC = () => {
             </Paper>
           )}
         </div>
-
         <Link href='/write'>
           <a>
             <Button variant='contained' className={styles.penButton}>

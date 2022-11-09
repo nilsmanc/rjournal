@@ -28,5 +28,6 @@ export const Editor: React.FC<EditorProps> = ({ onChange, initialBlocks }) => {
         .catch((e) => console.error('ERROR editor cleanup', e))
     }
   }, [])
+
   return <div id='editor' />
 }

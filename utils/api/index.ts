@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { GetServerSidePropsContext, NextPageContext } from 'next'
 import Cookies, { parseCookies } from 'nookies'
+
 import { CommentApi } from './comment'
 import { PostApi } from './post'
 import { UserApi } from './user'
@@ -16,7 +17,7 @@ export const Api = (ctx?: NextPageContext | GetServerSidePropsContext): ApiRetur
   const token = cookies.rtoken
 
   const instance = axios.create({
-    baseURL: 'https://rjournal-backend.herokuapp.com',
+    baseURL: 'https://web-production-66da.up.railway.app',
     headers: {
       Authorization: 'Bearer ' + token,
     },

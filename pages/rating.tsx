@@ -1,3 +1,10 @@
+import { NextPage } from 'next'
+
+import { MainLayout } from '../layouts/MainLayout'
+import { FollowButton } from '../components/FollowButton'
+import { Api } from '../utils/api'
+import { ResponseUser } from '../utils/api/types'
+
 import {
   Paper,
   Table,
@@ -9,12 +16,6 @@ import {
   Tabs,
   Tab,
 } from '@material-ui/core'
-
-import { MainLayout } from '../layouts/MainLayout'
-import { FollowButton } from '../components/FollowButton'
-import { Api } from '../utils/api'
-import { NextPage } from 'next'
-import { ResponseUser } from '../utils/api/types'
 
 interface RatingPageProps {
   users: ResponseUser[]
@@ -51,6 +52,7 @@ const Rating: NextPage<RatingPageProps> = ({ users }) => {
             {users.map((obj) => (
               <TableRow key={obj.id}>
                 <TableCell component='th' scope='row'>
+                  <span className='mr-15'></span>
                   {obj.fullName}
                 </TableCell>
                 <TableCell align='right'>{obj.commentsCount * 2}</TableCell>

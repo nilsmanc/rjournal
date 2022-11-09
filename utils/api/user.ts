@@ -1,11 +1,13 @@
-import { CreateUserDto, LoginDto, ResponseUser } from './types'
 import { AxiosInstance } from 'axios'
+
+import { CreateUserDto, LoginDto, ResponseUser } from './types'
 
 export const UserApi = (instance: AxiosInstance) => ({
   async getAll() {
     const { data } = await instance.get<ResponseUser[]>('/users')
     return data
   },
+
   async register(dto: CreateUserDto) {
     const { data } = await instance.post<CreateUserDto, { data: ResponseUser }>(
       '/auth/register',
@@ -13,6 +15,7 @@ export const UserApi = (instance: AxiosInstance) => ({
     )
     return data
   },
+
   async login(dto: LoginDto) {
     const { data } = await instance.post<LoginDto, { data: ResponseUser }>('/auth/login', dto)
     return data

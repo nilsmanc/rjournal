@@ -1,15 +1,15 @@
 import Head from 'next/head'
-import { MuiThemeProvider, CssBaseline } from '@material-ui/core'
+import 'macro-css'
 import { AppProps } from 'next/app'
 
 import { Header } from '../components/Header'
 import { wrapper } from '../redux/store'
 import { theme } from '../theme'
-
-import '../styles/globals.scss'
-import 'macro-css'
 import { setUserData } from '../redux/slices/user'
 import { Api } from '../utils/api'
+
+import '../styles/globals.scss'
+import { MuiThemeProvider, CssBaseline } from '@material-ui/core'
 
 function App({ Component, pageProps }: AppProps) {
   return (

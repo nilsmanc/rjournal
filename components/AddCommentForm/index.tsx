@@ -1,8 +1,10 @@
 import React from 'react'
-import { Button, Input } from '@material-ui/core'
-import styles from './AddCommentForm.module.scss'
+
 import { Api } from '../../utils/api'
 import { CommentItem } from '../../utils/api/types'
+
+import styles from './AddCommentForm.module.scss'
+import { Button, Input } from '@material-ui/core'
 
 interface AddCommentFormProps {
   postId: number

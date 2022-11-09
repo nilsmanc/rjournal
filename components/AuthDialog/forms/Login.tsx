@@ -1,15 +1,17 @@
 import React from 'react'
-import { Alert } from '@material-ui/lab'
-import { Button } from '@material-ui/core'
 import { useForm, FormProvider } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { setCookie } from 'nookies'
+
 import { FormField } from '../../FormField'
 import { LoginFormSchema } from '../../../utils/validations'
 import { LoginDto } from '../../../utils/api/types'
-import { setCookie } from 'nookies'
 import { useAppDispatch } from '../../../redux/hooks'
 import { setUserData } from '../../../redux/slices/user'
 import { Api } from '../../../utils/api'
+
+import { Alert } from '@material-ui/lab'
+import { Button } from '@material-ui/core'
 
 interface LoginFormProps {
   onOpenRegister: () => void

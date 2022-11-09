@@ -1,10 +1,11 @@
 import React from 'react'
-import ArrowRightIcon from '@material-ui/icons/NavigateNextOutlined'
+import clsx from 'clsx'
+
+import { CommentItem } from './CommentItems'
+import { useComments } from '../../hooks/useComments'
 
 import styles from './SideComments.module.scss'
-import { CommentItem } from './CommentItems'
-import clsx from 'clsx'
-import { useComments } from '../../hooks/useComments'
+import ArrowRightIcon from '@material-ui/icons/NavigateNextOutlined'
 
 export const SideComments = () => {
   const { comments } = useComments()
@@ -13,6 +14,7 @@ export const SideComments = () => {
   const toggleVisible = () => {
     setVisible(!visible)
   }
+
   return (
     <div className={clsx(styles.root, !visible && styles.rotated)}>
       <h3 onClick={toggleVisible}>

@@ -1,11 +1,13 @@
 import React from 'react'
-import { Divider, Paper, Tab, Tabs, Typography } from '@material-ui/core'
+
 import { Comment } from '../Comment'
 import { AddCommentForm } from '../AddCommentForm'
 import { CommentItem } from '../../utils/api/types'
 import { useAppSelector } from '../../redux/hooks'
 import { selectUserData } from '../../redux/slices/user'
 import { useComments } from '../../hooks/useComments'
+
+import { Divider, Paper, Tab, Tabs, Typography } from '@material-ui/core'
 
 interface PostComments {
   postId: number

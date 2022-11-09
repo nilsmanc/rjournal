@@ -1,7 +1,8 @@
-import { ResponseUser } from './../../utils/api/types'
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from '../store'
 import { HYDRATE } from 'next-redux-wrapper'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+
+import { RootState } from '../store'
+import { ResponseUser } from './../../utils/api/types'
 
 export interface UserState {
   data?: ResponseUser | null
