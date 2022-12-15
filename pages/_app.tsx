@@ -10,10 +10,15 @@ import { Api } from '../utils/api'
 
 import '../styles/globals.scss'
 import { MuiThemeProvider, CssBaseline } from '@material-ui/core'
+import { useEffect, useState } from 'react'
 
 function App({ Component, pageProps }: AppProps) {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true))
   return (
-    <>
+    //@ts-ignore
+    <div style={{ visibility: !mounted ? 'hidden' : '' }}>
       <Head>
         <title>RJournal</title>
         <link rel='icon' href='/favicon.ico' />
@@ -29,7 +34,7 @@ function App({ Component, pageProps }: AppProps) {
         <Header />
         <Component {...pageProps} />
       </MuiThemeProvider>
-    </>
+    </div>
   )
 }
 
