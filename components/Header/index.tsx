@@ -85,9 +85,11 @@ export const Header: React.FC = () => {
         </div>
         <Link href='/write'>
           <a>
-            <Button variant='contained' className={styles.penButton}>
-              Новая запись
-            </Button>
+            {userData && (
+              <Button variant='contained' className={styles.penButton}>
+                Новая запись
+              </Button>
+            )}
           </a>
         </Link>
       </div>

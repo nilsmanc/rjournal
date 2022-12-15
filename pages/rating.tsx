@@ -40,7 +40,7 @@ const Rating: NextPage<RatingPageProps> = ({ users }) => {
       </Paper>
 
       <Paper elevation={0}>
-        <Table aria-label='simple table'>
+        <Table className='mb-50' aria-label='simple table'>
           <TableHead>
             <TableRow>
               <TableCell>Имя пользователя</TableCell>
