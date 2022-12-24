@@ -17,7 +17,7 @@ export const Api = (ctx?: NextPageContext | GetServerSidePropsContext): ApiRetur
   const token = cookies.rtoken
 
   const instance = axios.create({
-    baseURL: 'https://web-production-66da.up.railway.app',
+    baseURL: process.env.REACT_APP_API_URL,
     headers: {
       Authorization: 'Bearer ' + token,
     },
