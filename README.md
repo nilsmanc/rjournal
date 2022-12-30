@@ -15,3 +15,5 @@ NextJS/React, Typescript, Redux Toolkit, EditorJS, React Hook Form/Yup, Material
 ![fourth](/public/static/readme/info.png)
 
 ![fifth](/public/static/readme/raiting.png)
+
+![sixth](/public/static/readme/add-post.png)
